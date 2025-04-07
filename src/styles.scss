@@ -1,0 +1,40 @@
+/* src/styles.scss */
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Tajawal', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    direction: rtl;
+    padding-top: 80px;
+  }
+  
+  /* Container */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  /* Main theme colors */
+  :root {
+    --primary-color: #22b573; /* Green color from the image */
+    --secondary-color: #2e3a4d; /* Dark blue from the image */
+    --text-color: #333;
+    --light-gray: #f5f5f5;
+    --border-color: #e0e0e0;
+  }
+  
+  /* Import RTL font */
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap');
+
+  :host-context(body) {
+    padding-top: 80px; // Height of the navbar
+  }

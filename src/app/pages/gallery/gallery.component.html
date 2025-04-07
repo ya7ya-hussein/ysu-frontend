@@ -1,0 +1,20 @@
+<!-- src/app/pages/gallery/gallery.component.html -->
+<app-page-header titleFirst="معرض" titleSecond=" الصور"></app-page-header>
+
+<div class="container">
+  <section class="gallery-section">
+    <div class="section-header">
+      <h2>ألبومات الصور</h2>
+      <div class="section-underline"></div>
+      <p class="section-description">
+        نعرض هنا مجموعة من الصور لفعاليات وأنشطة اتحاد الطلبة اليمنيين في ماليزيا
+      </p>
+    </div>
+    
+    <div class="albums-grid">
+      <div class="album-card" *ngFor="let album of albums">
+        <app-gallery-card [album]="album"></app-gallery-card>
+      </div>
+    </div>
+  </section>
+</div>

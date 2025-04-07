@@ -1,0 +1,121 @@
+// src/app/components/gallery-card/gallery-card.component.scss
+
+.gallery-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    background-color: #fff;
+    height: 100%;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      
+      .hover-overlay {
+        opacity: 1;
+      }
+      
+      .card-image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 240px;
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      z-index: 1;
+    }
+  }
+  
+  .card-content {
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .album-title {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  
+  .album-date {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+    gap: 6px;
+    
+    svg {
+      color: var(--primary-color);
+    }
+  }
+  
+  .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(34, 181, 115, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 3;
+  }
+  
+  .view-album-btn {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 12px 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.05);
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .card-image {
+      height: 200px;
+    }
+    
+    .album-title {
+      font-size: 1.2rem;
+    }
+    
+    .card-content {
+      padding: 15px;
+    }
+  }

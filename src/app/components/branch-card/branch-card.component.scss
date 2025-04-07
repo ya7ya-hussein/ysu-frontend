@@ -1,0 +1,158 @@
+// src/app/components/branch-card/branch-card.component.scss
+
+.branch-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    background-color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      
+      .card-image img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  
+  .card-image {
+    width: 100%;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    
+    .image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      z-index: 1;
+    }
+  }
+  
+  .card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+  }
+  
+  .branch-title {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    min-height: 3.5rem; // Fixed height to ensure consistent spacing below
+    margin-bottom: 10px;
+    display: -webkit-box;
+    // -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  // Container to hold all info elements with consistent positioning
+  .branch-info-container {
+    margin-bottom: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .established-date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    
+    svg {
+      color: var(--primary-color);
+      flex-shrink: 0;
+    }
+    
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  .branch-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #666;
+    font-size: 0.95rem;
+    
+    svg {
+      color: var(--primary-color);
+      flex-shrink: 0;
+    }
+    
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  
+  .details-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    margin-top: auto;
+    
+    &:hover {
+      background-color: darken(#22b573, 8%);
+      transform: translateY(-2px);
+    }
+    
+    &:active {
+      transform: translateY(0);
+    }
+  }
+  
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    .card-image {
+      height: 200px;
+    }
+    
+    .branch-title {
+      font-size: 1.2rem;
+      min-height: 3.2rem;
+    }
+    
+    .card-content {
+      padding: 15px;
+    }
+  }
